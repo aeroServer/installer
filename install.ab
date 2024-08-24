@@ -1,5 +1,8 @@
-import { echo_success, confirm, error } from "std/env"
+import { echo_success, confirm, error, shell_constant_set } from "std/env"
 import * from "functions.ab"
+
+unsafe shell_constant_set("DEPENDS_INSTALLER", "sudo apt install")
+unsafe shell_constant_set("DEPENDS_INSTALL_AUTO", "1")
 
 echo_success("Bienvenue dans l'installeur aeroServer")
 
@@ -11,6 +14,8 @@ $sudo apt update$ failed {
 $sudo apt upgrade$ failed {
 	error("Mise à jour de l'OS impossible")
 }
+
+depends(["bc/bc", "php/php"])
 
 if(confirm("Voulez vous installer le module camera ?")) {
 	echo_success("Installation du module camera...")
