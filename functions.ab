@@ -1,0 +1,23 @@
+pub fun depends(command: [Text], exit_on_error: Bool = true, installer: Text = ""): Bool {
+    let package_command = split(command[0], "/")
+    let command_exist = is_command(package_command[1])
+    let install_failed = false
+    if not command_exist {
+        unsafe $echo -e \$"{package_command[1]} command could not be found, install package {package_command[0]}"$
+        if shell_isset("DEPENDS_INSTALLER") or installer != "" {
+        	if confirm("Would you like to install it ?") {
+                //let installer = 
+        		let cmd = "{unsafe shell_var_get("DEPENDS_INSTALLER")} {package_command[0]}"
+	            ${cmd}$ failed {
+	                if exit_on_error: exit(1)
+	                return false
+	            }	
+        	}
+        } else {
+            if exit_on_error: exit(1)
+            return false
+        }
+    }
+    return true
+}
+

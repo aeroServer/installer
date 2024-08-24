@@ -1,0 +1,8 @@
+import { echo_success, confirm } from "std/env"
+import * from "functions.ab"
+
+echo_success("Bienvenue dans l'installeur aeroServer")
+
+if(confirm('Voulez vous installer le module camera ?')) {
+	echo_success("Installation du module camera...")
+}
