@@ -3,6 +3,15 @@ import * from "functions.ab"
 
 echo_success("Bienvenue dans l'installeur aeroServer")
 
-if(confirm('Voulez vous installer le module camera ?')) {
+echo_success("mise à jour de l'OS...")
+$sudo apt update$ failed {
+	error("Mise à jour de l'OS impossible")
+}
+
+$sudo apt upgrade$ failed {
+	error("Mise à jour de l'OS impossible")
+}
+
+if(confirm("Voulez vous installer le module camera ?")) {
 	echo_success("Installation du module camera...")
 }
