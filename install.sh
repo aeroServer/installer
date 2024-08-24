@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.3.4-alpha
-# date: 2024-08-24 16:20:33
+# date: 2024-08-24 16:23:03
 
 split__21_v0() {
     local text=$1
@@ -180,34 +180,41 @@ shell_constant_set__71_v0 "DEPENDS_INSTALL_AUTO" "1";
 __AS=$?;
 __AF_shell_constant_set71_v0__5_8="$__AF_shell_constant_set71_v0";
 echo "$__AF_shell_constant_set71_v0__5_8" > /dev/null 2>&1
-echo_success__90_v0 "Bienvenue dans l'installeur aeroServer";
-__AF_echo_success90_v0__7_1="$__AF_echo_success90_v0";
-echo "$__AF_echo_success90_v0__7_1" > /dev/null 2>&1
-echo_success__90_v0 "mise à jour de l'OS...";
-__AF_echo_success90_v0__9_1="$__AF_echo_success90_v0";
-echo "$__AF_echo_success90_v0__9_1" > /dev/null 2>&1
-sudo apt update;
+sudo apt install bc;
 __AS=$?;
 if [ $__AS != 0 ]; then
     error__92_v0 "Mise à jour de l'OS impossible" 1;
-    __AF_error92_v0__11_2="$__AF_error92_v0";
-    echo "$__AF_error92_v0__11_2" > /dev/null 2>&1
+    __AF_error92_v0__8_2="$__AF_error92_v0";
+    echo "$__AF_error92_v0__8_2" > /dev/null 2>&1
 fi
-sudo apt upgrade;
+echo_success__90_v0 "Bienvenue dans l'installeur aeroServer";
+__AF_echo_success90_v0__11_1="$__AF_echo_success90_v0";
+echo "$__AF_echo_success90_v0__11_1" > /dev/null 2>&1
+echo_success__90_v0 "mise à jour de l'OS...";
+__AF_echo_success90_v0__13_1="$__AF_echo_success90_v0";
+echo "$__AF_echo_success90_v0__13_1" > /dev/null 2>&1
+sudo apt update;
 __AS=$?;
 if [ $__AS != 0 ]; then
     error__92_v0 "Mise à jour de l'OS impossible" 1;
     __AF_error92_v0__15_2="$__AF_error92_v0";
     echo "$__AF_error92_v0__15_2" > /dev/null 2>&1
 fi
-__AMBER_ARRAY_3=("bc/bc" "php/php");
+sudo apt upgrade;
+__AS=$?;
+if [ $__AS != 0 ]; then
+    error__92_v0 "Mise à jour de l'OS impossible" 1;
+    __AF_error92_v0__19_2="$__AF_error92_v0";
+    echo "$__AF_error92_v0__19_2" > /dev/null 2>&1
+fi
+__AMBER_ARRAY_3=("php/php");
 depends__103_v0 __AMBER_ARRAY_3[@] 1 "";
-__AF_depends103_v0__18_1="$__AF_depends103_v0";
-echo "$__AF_depends103_v0__18_1" > /dev/null 2>&1
+__AF_depends103_v0__22_1="$__AF_depends103_v0";
+echo "$__AF_depends103_v0__22_1" > /dev/null 2>&1
 confirm__78_v0 "Voulez vous installer le module camera ?" 0;
-__AF_confirm78_v0__20_4="$__AF_confirm78_v0";
-if [ "$__AF_confirm78_v0__20_4" != 0 ]; then
+__AF_confirm78_v0__24_4="$__AF_confirm78_v0";
+if [ "$__AF_confirm78_v0__24_4" != 0 ]; then
     echo_success__90_v0 "Installation du module camera...";
-    __AF_echo_success90_v0__21_2="$__AF_echo_success90_v0";
-    echo "$__AF_echo_success90_v0__21_2" > /dev/null 2>&1
+    __AF_echo_success90_v0__25_2="$__AF_echo_success90_v0";
+    echo "$__AF_echo_success90_v0__25_2" > /dev/null 2>&1
 fi
