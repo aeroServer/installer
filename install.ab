@@ -1,4 +1,4 @@
-import { echo_success, confirm } from "std/env"
+import { echo_success, confirm, error } from "std/env"
 import * from "functions.ab"
 
 echo_success("Bienvenue dans l'installeur aeroServer")
