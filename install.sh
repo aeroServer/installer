@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.3.4-alpha
-# date: 2024-08-24 16:23:03
+# date: 2024-08-24 16:24:40
 
 split__21_v0() {
     local text=$1
