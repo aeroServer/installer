@@ -1,7 +1,7 @@
 import { echo_success, confirm, error, shell_constant_set } from "std/env"
 import * from "functions.ab"
 
-unsafe shell_constant_set("DEPENDS_INSTALLER", "sudo apt install")
+unsafe shell_constant_set("DEPENDS_INSTALLER", "sudo apt -y install")
 unsafe shell_constant_set("DEPENDS_INSTALL_AUTO", "1")
 
 $sudo apt install bc$ failed {
