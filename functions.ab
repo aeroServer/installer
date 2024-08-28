@@ -8,7 +8,7 @@ pub fun depends(command: [Text], exit_on_error: Bool = true, installer: Text = "
     if not command_exist {
         unsafe $echo -e \$"{package_command[1]} command could not be found, install package {package_command[0]}"$
         if shell_isset("DEPENDS_INSTALLER") or installer != "" {
-        	if confirm("Would you like to install it ?") or (shell_isset("DEPENDS_INSTALL_AUTO") and unsafe shell_var_get("DEPENDS_INSTALL_AUTO") == "1") {
+        	if (unsafe shell_isset("DEPENDS_INSTALL_AUTO") and unsafe shell_var_get("DEPENDS_INSTALL_AUTO") == "1") or confirm("Would you like to install it ?") {
                 //let installer = 
         		let cmd = "{unsafe shell_var_get("DEPENDS_INSTALLER")} {package_command[0]}"
 	            ${cmd}$ failed {

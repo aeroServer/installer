@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.3.4-alpha
-# date: 2024-08-24 16:24:40
+# date: 2024-08-28 09:34:56
 
 split__21_v0() {
     local text=$1
@@ -134,14 +134,14 @@ depends__103_v0() {
         shell_isset__70_v0 "DEPENDS_INSTALLER";
         __AF_shell_isset70_v0__10_12="$__AF_shell_isset70_v0";
         if [ $(echo "$__AF_shell_isset70_v0__10_12" '||' $([ "_${installer}" == "_" ]; echo $?) | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//') != 0 ]; then
-            confirm__78_v0 "Would you like to install it ?" 0;
-            __AF_confirm78_v0__11_13="$__AF_confirm78_v0";
             shell_isset__70_v0 "DEPENDS_INSTALL_AUTO";
-            __AF_shell_isset70_v0__11_59="$__AF_shell_isset70_v0";
+            __AF_shell_isset70_v0__11_21="$__AF_shell_isset70_v0";
             shell_var_get__74_v0 "DEPENDS_INSTALL_AUTO";
             __AS=$?;
-            __AF_shell_var_get74_v0__11_106="${__AF_shell_var_get74_v0}";
-            if [ $(echo "$__AF_confirm78_v0__11_13" '||' $(echo "$__AF_shell_isset70_v0__11_59" '&&' $([ "_${__AF_shell_var_get74_v0__11_106}" != "_1" ]; echo $?) | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//') | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//') != 0 ]; then
+            __AF_shell_var_get74_v0__11_68="${__AF_shell_var_get74_v0}";
+            confirm__78_v0 "Would you like to install it ?" 0;
+            __AF_confirm78_v0__11_117="$__AF_confirm78_v0";
+            if [ $(echo $(echo "$__AF_shell_isset70_v0__11_21" '&&' $([ "_${__AF_shell_var_get74_v0__11_68}" != "_1" ]; echo $?) | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//') '||' "$__AF_confirm78_v0__11_117" | bc -l | sed '/\./ s/\.\{0,1\}0\{1,\}$//') != 0 ]; then
                 # let installer =
                 shell_var_get__74_v0 "DEPENDS_INSTALLER";
                 __AS=$?;
